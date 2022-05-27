@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SwipeDetector : MonoBehaviour
 {
-    [SerializeField] private InputHandler inputHandler;
+    [SerializeField] private InputManager inputHandler;
 
     [SerializeField] private float minDistance;
     [SerializeField] private float maxTime;
@@ -30,15 +30,15 @@ public class SwipeDetector : MonoBehaviour
         inputHandler.OnEndTouch += SwipeEnd;
     }
 
-    private void SwipeStart(Vector2 position, float time)
+    private void SwipeStart(Vector2 direction, float time)
     {
-        startPosition = position;
+        startPosition = direction;
         startTime = time;
     }
 
-    private void SwipeEnd(Vector2 position, float time)
+    private void SwipeEnd(Vector2 direction, float time)
     {
-        endPosition = position;
+        endPosition = direction;
         endTime = time;
 
         Detect();
@@ -46,17 +46,18 @@ public class SwipeDetector : MonoBehaviour
 
     private void Detect()
     {
-        Vector2 resultSwipe = new Vector2(endPosition.x - startPosition.x, endPosition.y - startPosition.y);
+        Vector2 resultSwipe = endPosition - startPosition;
+        
         if (resultSwipe.magnitude < minDistance || endTime - startTime > maxTime)
             return;
 
         if (Mathf.Abs(resultSwipe.x) > Mathf.Abs(resultSwipe.y))
         {
-            OnSwipe(resultSwipe.x < 0 ? Side.left : Side.right);
+            OnSwipe?.Invoke(resultSwipe.x < 0 ? Side.left : Side.right);
         }
         else
         {
-            OnSwipe(resultSwipe.y < 0 ? Side.down : Side.up);
+            OnSwipe?.Invoke(resultSwipe.y < 0 ? Side.down : Side.up);
         }
     }
 }
