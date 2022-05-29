@@ -4,8 +4,8 @@ using TMPro;
 
 public class Player : Entity
 {
-    [SerializeField] protected Inventory inventory;
-    [SerializeField] protected TextMeshProUGUI healthUI;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private TextMeshProUGUI healthUI;
 
     protected override void Awake()
     {

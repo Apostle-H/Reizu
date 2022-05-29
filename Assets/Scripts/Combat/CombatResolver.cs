@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -6,6 +7,8 @@ public class CombatResolver : MonoBehaviour
     [SerializeField] private EnemiesPool enemiesPool;
     [SerializeField] private SwipeDetector swipeDetector;
     [SerializeField] private Player player;
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private ItemsPool itemsPool;
 
     public delegate void EndCombat();
     public event EndCombat onEndCombat;
@@ -48,9 +51,24 @@ public class CombatResolver : MonoBehaviour
             player.Attack(enemy);
         }
 
-        if (enemies.All(enemy => enemy.isDead))
+        if (enemies.All(enemy => (enemy == null || enemy.isDead)))
         {
             onEndCombat?.Invoke();
         }
+    }
+
+    private void DropItems()
+    {
+        int resultItemsAmount = 0;
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i] == null)
+                continue;
+
+            resultItemsAmount += enemies[i].DropItemsAmount;
+        }
+
+        //inventory.AddItems(itemsPool.GetItems(resultItemsAmount, Rarity.common));
     }
 }
