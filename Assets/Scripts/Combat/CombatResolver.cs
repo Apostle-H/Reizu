@@ -5,9 +5,7 @@ public class CombatResolver : MonoBehaviour
 {
     [SerializeField] private EnemiesPool enemiesPool;
     [SerializeField] private SwipeDetector swipeDetector;
-    [SerializeField] private Transform player;
-
-    [SerializeField] private int damage;
+    [SerializeField] private Player player;
 
     public delegate void EndCombat();
     public event EndCombat onEndCombat;
@@ -32,24 +30,25 @@ public class CombatResolver : MonoBehaviour
             if (encounterEnemies[i] == null)
                 continue;
 
-            enemies[i] = enemiesPool.GetEnemy(encounterEnemies[i].stats.title).GetComponent<Enemy>();
+            enemies[i] = enemiesPool.GetEnemy(encounterEnemies[i].Title).GetComponent<Enemy>();
 
-            enemies[i].healthLeft = enemies[i].stats.health;
             enemies[i].gameObject.SetActive(true);
             platform.MoveToEnemy(enemies[i].gameObject.transform, i);
+
+            StartCoroutine(enemies[i].Fight(player));
         }
 
-        platform.MoveToCombat(player);
+        platform.MoveToCombat(player.transform);
     }
 
     private void DealDamage(Side swipeSide)
     {
         foreach (var enemy in enemies)
         {
-            enemy?.TakeDamage(damage);
+            player.Attack(enemy);
         }
 
-        if (enemies.All(enemy => enemy == null || enemy.healthLeft <= 0))
+        if (enemies.All(enemy => enemy.isDead))
         {
             onEndCombat?.Invoke();
         }

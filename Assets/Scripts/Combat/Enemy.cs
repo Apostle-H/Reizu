@@ -1,34 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
-    public EnemySO stats;
-    [HideInInspector] public int healthLeft;
+    public Rarity rarity;
+    [SerializeField] protected float attackSpeed;
 
-    [SerializeField] private TextMeshProUGUI titleUI;
-    [SerializeField] private Image healtBarUI;
-
-    private void Awake()
+    public IEnumerator Fight(Entity enemy)
     {
-        titleUI.text = stats.title;
-    }
-
-    public Enemy(EnemySO stats)
-    {
-        this.stats = stats;
-    }
-
-    public bool TakeDamage(int damage)
-    {
-        healthLeft -= damage;
-        healtBarUI.fillAmount = (float)healthLeft / (float)stats.health;
-
-        if (healthLeft > 0)
-            return false;
-
-        gameObject.SetActive(false);
-        return true;
+        Attack(enemy);
+        yield return new WaitForSeconds(attackSpeed);
+        StartCoroutine(Fight(enemy));
     }
 }

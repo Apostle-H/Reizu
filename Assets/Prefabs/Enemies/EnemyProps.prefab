@@ -109,10 +109,10 @@ RectTransform:
   m_Father: {fileID: 795874178486115980}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.25}
-  m_SizeDelta: {x: 2.9, y: 0.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.25}
+  m_SizeDelta: {x: -0.099999905, y: 0.39999998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8193943232576478643
 CanvasRenderer:
@@ -243,10 +243,10 @@ RectTransform:
   m_Father: {fileID: 795874178486115980}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.25}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.25}
+  m_SizeDelta: {x: 97, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7561877416809595744
 GameObject:
@@ -380,10 +380,10 @@ RectTransform:
   m_Father: {fileID: 6205683158817403797}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2.85, y: 0.35}
+  m_SizeDelta: {x: -97.15, y: 0.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4663922535829949704
 CanvasRenderer:
@@ -455,10 +455,10 @@ RectTransform:
   m_Father: {fileID: 6205683158817403797}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2.9, y: 0.4}
+  m_SizeDelta: {x: -97.1, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7049929057168445775
 CanvasRenderer:
@@ -608,7 +608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59524c669f61914793de18acb59e6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: d20d5b17c7dc7e04294a636f8ee856ec, type: 2}
-  healthLeft: 0
+  title: Test
+  health: 10
+  defence: 0
+  damage: 2
   titleUI: {fileID: 4358106794210553857}
   healtBarUI: {fileID: 952767999427937631}
+  rarity: 0
+  attackSpeed: 1

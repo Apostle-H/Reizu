@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public enum Side { left, right, down, up };
 
-public enum GameMode { explore, combat };
+public enum Rarity { common, rare, epic, myth };
 
-public enum Rarity { common, rare, epic, myth};
+public enum ItemType { weapon, armor, consumable };
+
+public enum Stat { healtPermanent, healtHeal, defence, damage }

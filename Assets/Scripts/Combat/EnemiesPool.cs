@@ -21,34 +21,25 @@ public class EnemiesPool : MonoBehaviour
                     continue;
 
                 GameObject tempEnenmy = Instantiate(enemy.gameObject);
-                string tempTittle = tempEnenmy.GetComponent<Enemy>().stats.title;
+                string tempTittle = tempEnenmy.GetComponent<Enemy>().Title;
                 tempEnenmy.SetActive(false);
 
                 if (!pool.ContainsKey(tempTittle))
                     pool.Add(tempTittle, new Queue<GameObject>());
 
-                pool.TryGetValue(tempTittle, out tempQueue);
-                tempQueue.Enqueue(tempEnenmy);
+                pool[tempTittle].Enqueue(tempEnenmy);
             }
         }
     }
 
-    public GameObject GetEnemy(string title)
-    {
-        Queue<GameObject> tempQueue = new Queue<GameObject>();
-        pool.TryGetValue(title, out tempQueue);
-
-        return tempQueue.Dequeue();
-    }
+    public GameObject GetEnemy(string title) => pool[title]?.Dequeue();
 
     public void ReturnEnemy(string title, GameObject enemy)
     {
-        Queue<GameObject> tempQueue = new Queue<GameObject>();
-        if (!pool.TryGetValue(title, out tempQueue))
-        {
-            pool.Add(title, tempQueue);
-        }
+        if (!pool.ContainsKey(title))
+            pool.Add(title, new Queue<GameObject>());
 
-        tempQueue.Enqueue(enemy);
+        pool[title].Enqueue(enemy);
     }
+    
 }
