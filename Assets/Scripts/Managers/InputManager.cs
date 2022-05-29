@@ -9,9 +9,9 @@ public class InputManager : MonoBehaviour
     private PlayerControls playerControls;
 
     public delegate void StartTouch(Vector2 direction, float time);
-    public event StartTouch OnStartTouch;
+    public event StartTouch onStartTouch;
     public delegate void EndTouch(Vector2 direction, float time);
-    public event EndTouch OnEndTouch;
+    public event EndTouch onEndTouch;
 
     private void Awake() => playerControls = new PlayerControls();
 
@@ -26,10 +26,10 @@ public class InputManager : MonoBehaviour
     }
 
     private void StartTouchPrimary(InputAction.CallbackContext context) =>
-        OnStartTouch?.Invoke(playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.startTime);
+        onStartTouch?.Invoke(playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.startTime);
 
     private void EndTouchPrimary(InputAction.CallbackContext context) =>
-        OnEndTouch?.Invoke(playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.time);
+        onEndTouch?.Invoke(playerControls.Touch.PrimaryPosition.ReadValue<Vector2>(), (float)context.time);
 
     public Vector2 PrimaryPosition() => playerControls.Touch.PrimaryPosition.ReadValue<Vector2>();
 }

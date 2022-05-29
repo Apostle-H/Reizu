@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "newEnemy", menuName = "EnemySO")]
-public class EnemySO : ScriptableObject
+public class EnemySO: MonoBehaviour
 {
     public string title;
+    public Rarity rarity;
 
     public int health;
-    public float damage;
+    public int damage;
     public float attackSpeed;
 }

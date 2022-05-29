@@ -11,7 +11,7 @@ public class SwipeDetector : MonoBehaviour
     [SerializeField] private float maxTime;
 
     public delegate void Swipe(Side swipeSide);
-    public event Swipe OnSwipe;
+    public event Swipe onSwipe;
 
     private Vector2 startPosition;
     private Vector2 endPosition;
@@ -20,14 +20,14 @@ public class SwipeDetector : MonoBehaviour
 
     private void OnEnable()
     {
-        inputHandler.OnStartTouch += SwipeStart;
-        inputHandler.OnEndTouch += SwipeEnd;
+        inputHandler.onStartTouch += SwipeStart;
+        inputHandler.onEndTouch += SwipeEnd;
     }
 
     private void OnDisable()
     {
-        inputHandler.OnStartTouch += SwipeStart;
-        inputHandler.OnEndTouch += SwipeEnd;
+        inputHandler.onStartTouch += SwipeStart;
+        inputHandler.onEndTouch += SwipeEnd;
     }
 
     private void SwipeStart(Vector2 direction, float time)
@@ -53,11 +53,11 @@ public class SwipeDetector : MonoBehaviour
 
         if (Mathf.Abs(resultSwipe.x) > Mathf.Abs(resultSwipe.y))
         {
-            OnSwipe?.Invoke(resultSwipe.x < 0 ? Side.left : Side.right);
+            onSwipe?.Invoke(resultSwipe.x < 0 ? Side.left : Side.right);
         }
         else
         {
-            OnSwipe?.Invoke(resultSwipe.y < 0 ? Side.down : Side.up);
+            onSwipe?.Invoke(resultSwipe.y < 0 ? Side.down : Side.up);
         }
     }
 }

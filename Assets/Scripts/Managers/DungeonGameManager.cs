@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class DungeonGameManager : MonoBehaviour
 {
-    public delegate void GameModeChange(GameMode gameMode);
-    public event GameModeChange OnGameModeChanged;
+    //public delegate void GameModeChange(GameMode gameMode);
+    //public event GameModeChange OnGameModeChanged;
 
-    public GameMode gameMode { get; private set; }
+    //public GameMode gameMode { get; private set; }
 
-    public void ChangeGameMode(GameMode newGameMode)
-    {
-        gameMode = newGameMode;
+    //public void ChangeGameMode(GameMode newGameMode)
+    //{
+    //    gameMode = newGameMode;
 
-        OnGameModeChanged?.Invoke(gameMode);
-    }
+    //    OnGameModeChanged?.Invoke(gameMode);
+    //}
 }
 

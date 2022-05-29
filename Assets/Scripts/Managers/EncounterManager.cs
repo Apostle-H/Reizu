@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class EncounterManager : MonoBehaviour
 {
-    [SerializeField] private Explorer mover;
+    [SerializeField] private SwipeDetector swipeDetector;
+    [SerializeField] private Explore explore;
+    [SerializeField] private CombatResolver combatResolver;
 
-    private Encounter currentEncounter;
+    private EncounterSO currentEncounter;
 
-    public void StartEncounter(Encounter encounter)
+    public void StartEncounter(Platform platfrom)
     {
-        currentEncounter = encounter;
+        if (platfrom.encounter == null)
+            return;
 
-        currentEncounter.Appear();
-        currentEncounter.OnEndEncounter += EndEncounter;
-        if (currentEncounter is CombatEncounter)
+        currentEncounter = platfrom.encounter;
+
+        if (currentEncounter is CombatEncounterSO)
         {
-            mover.enabled = false;
+            combatResolver.enabled = true;
+            explore.enabled = false;
+
+            combatResolver.SetUpCombat(platfrom);
+            combatResolver.onEndCombat += EndEncounter;
         }
     }
 
     private void EndEncounter()
     {
-        if (currentEncounter is CombatEncounter)
+        if (currentEncounter is CombatEncounterSO)
         {
-            mover.enabled = true;
+            combatResolver.enabled = false;
+            explore.enabled = true;
         }
     }
 }

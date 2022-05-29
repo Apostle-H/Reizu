@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     {
         return platforms[indexer];
     }
+    
+    public Platform[] platformsForRead { get { return platforms; } }
 
     public Platform next { get { if (indexer < platforms.Length - 1) return platforms[++indexer]; else return null; } }
     public Platform previous { get { if (indexer > 0) return platforms[--indexer]; else return null; } }
