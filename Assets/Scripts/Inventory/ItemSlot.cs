@@ -11,7 +11,7 @@ public class ItemSlot : MonoBehaviour
 
     public Button button { get { return corespondingButton; } }
 
-    public bool SetItem(Item newItem)
+    public virtual bool TrySetItem(Item newItem)
     {
         if (newItem == null)
             return false;
@@ -25,16 +25,6 @@ public class ItemSlot : MonoBehaviour
         return true;
     }
 
-    public Item SwapItem(Item newItem)
-    {
-        Item tempItem = item;
-        item = newItem;
-
-        ShowHideItem(item != null);
-
-        return tempItem;
-    }
-
     public Item DeleteItem()
     {
         Item tempItem = item;
@@ -45,7 +35,7 @@ public class ItemSlot : MonoBehaviour
         return tempItem;
     }
 
-    private void ShowHideItem(bool show)
+    protected void ShowHideItem(bool show)
     {
         transform.GetChild(0).gameObject.SetActive(show);
     }
