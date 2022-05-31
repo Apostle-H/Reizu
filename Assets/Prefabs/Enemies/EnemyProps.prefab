@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 8561436127320091401}
   - component: {fileID: 8561436127320091398}
   - component: {fileID: 8561436127320091399}
-  - component: {fileID: 7429164211668197702}
+  - component: {fileID: 5969471581658900494}
   m_Layer: 0
   m_Name: EnemyProps
   m_TagString: Untagged
@@ -596,7 +596,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7429164211668197702
+--- !u!114 &5969471581658900494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -605,14 +605,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8561436127320091396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a59524c669f61914793de18acb59e6ad, type: 3}
+  m_Script: {fileID: 11500000, guid: 228c20700b76798469dea911f00a9b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: Test
-  health: 10
-  defence: 0
+  health: 12
+  defence: 1
   damage: 2
+  isDead: 0
   titleUI: {fileID: 4358106794210553857}
   healtBarUI: {fileID: 952767999427937631}
   rarity: 0
   attackSpeed: 1
+  minItems: 0
+  maxItems: 0

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b79b943132d2943bed48a8fe548e70, type: 3}
-  m_Name: Test
+  m_Script: {fileID: 11500000, guid: f84461eb7e786cf4bacc594eb9b3982d, type: 3}
+  m_Name: TestCombbat
   m_EditorClassIdentifier: 
-  title: 
-  rarity: 0
-  type: 0
-  riseValue: 2
-  inStock: 2
+  enemies:
+  - {fileID: 5969471581658900494, guid: 9e09b147df82fed49baa2aa229660dfb, type: 3}
+  - {fileID: 0}
+  - {fileID: 5969471581658900494, guid: 9e09b147df82fed49baa2aa229660dfb, type: 3}

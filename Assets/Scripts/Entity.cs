@@ -13,7 +13,7 @@ public class Entity : MonoBehaviour
 
     protected int healthLeft;
 
-    public bool isDead = false;
+    [HideInInspector] public bool isDead = false;
 
     [SerializeField] protected TextMeshProUGUI titleUI;
     [SerializeField] protected Image healtBarUI;

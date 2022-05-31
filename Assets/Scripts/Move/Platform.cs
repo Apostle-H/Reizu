@@ -9,8 +9,8 @@ public class Platform : MonoBehaviour
     [SerializeField] private Transform combatAnchor;
     [SerializeField] private Transform[] combatEnemiesAnchors = new Transform[3];
 
-    public EncounterSO encounter;
-    [HideInInspector] public bool encounterResolved;
+    public EncounterSO[] encounters;
+    [HideInInspector] public bool encountersResolved;
 
     public void MoveToMain(Transform movedObject)
     {

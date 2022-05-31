@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewCombatEncounter", menuName = "CombatEncounterSO")]
 public class CombatEncounterSO : EncounterSO
 {
-    public Enemy[] enemies = new Enemy[3];
+    public AutomaticFighter[] enemies = new AutomaticFighter[3];
 }

@@ -17,16 +17,30 @@ public class ItemsPool : MonoBehaviour
 
     public Item[] GetItems(int amount, Rarity rarity)
     {
+        int startingIndex;
+        int resultAmount;
         switch (rarity)
         {
             case Rarity.common:
-                return commonPool.GetRange(commonPool.Count - amount, amount).ToArray();
+                startingIndex = commonPool.Count - (amount + (commonPool.Count - amount));
+                resultAmount = startingIndex + amount > commonPool.Count ? amount - ((startingIndex + amount) - commonPool.Count) : amount;
+
+                return commonPool.GetRangeOut(startingIndex, resultAmount);
             case Rarity.rare:
-                return rarePool.GetRange(commonPool.Count - amount, amount).ToArray();
+                startingIndex = rarePool.Count - (amount + (rarePool.Count - amount));
+                resultAmount = startingIndex + amount > rarePool.Count ? amount - ((startingIndex + amount) - rarePool.Count) : amount;
+
+                return rarePool.GetRangeOut(startingIndex, resultAmount);
             case Rarity.epic:
-                return epicPool.GetRange(commonPool.Count - amount, amount).ToArray();
+                startingIndex = epicPool.Count - (amount + (epicPool.Count - amount));
+                resultAmount = startingIndex + amount > epicPool.Count ? amount - ((startingIndex + amount) - epicPool.Count) : amount;
+
+                return epicPool.GetRangeOut(startingIndex, resultAmount);
             case Rarity.myth:
-                return mythPool.GetRange(commonPool.Count - amount, amount).ToArray();
+                startingIndex = mythPool.Count - (amount + (mythPool.Count - amount));
+                resultAmount = startingIndex + amount > mythPool.Count ? amount - ((startingIndex + amount) - mythPool.Count) : amount;
+
+                return mythPool.GetRangeOut(startingIndex, resultAmount);
         }
 
         return null;

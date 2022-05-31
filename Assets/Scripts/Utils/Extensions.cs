@@ -20,4 +20,21 @@ public static class Extensions
             list[n] = value;
         }
     }
+
+    public static T[] GetRangeOut<T>(this IList<T> list, int startingIndex, int amount)
+    {
+        T[] result = new T[amount];
+
+        for (int i = startingIndex, j = 0; i < amount; i++, j++)
+        {
+            result[j] = list[i];
+        }
+
+        for (int i = list.Count - 1; i >= startingIndex; i--)
+        {
+            list.RemoveAt(i);
+        }
+
+        return result;
+    }
 }

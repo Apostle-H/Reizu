@@ -48,10 +48,10 @@ public class Explore : MonoBehaviour
         currentPlatform = targetPlatform;
         currentPlatform.MoveToMain(player);
 
-        if (currentPlatform.encounterResolved)
+        if (currentPlatform.encountersResolved)
             return;
 
         encounterManager.StartEncounter(currentPlatform);
-        currentPlatform.encounterResolved = true;
+        currentPlatform.encountersResolved = true;
     }
 }

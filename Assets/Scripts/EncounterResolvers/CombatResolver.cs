@@ -7,13 +7,12 @@ public class CombatResolver : MonoBehaviour
     [SerializeField] private EnemiesPool enemiesPool;
     [SerializeField] private SwipeDetector swipeDetector;
     [SerializeField] private Player player;
-    [SerializeField] private Inventory inventory;
     [SerializeField] private ItemsPool itemsPool;
 
     public delegate void EndCombat();
     public event EndCombat onEndCombat;
 
-    private Enemy[] enemies = new Enemy[3];
+    private AutomaticFighter[] enemies = new AutomaticFighter[3];
 
     private void OnEnable()
     {
@@ -25,15 +24,15 @@ public class CombatResolver : MonoBehaviour
         swipeDetector.onSwipe -= DealDamage;
     }
 
-    public void SetUpCombat(Platform platform)
+    public void SetUpCombat(Platform platform, int encounterIndex)
     {
-        Enemy[] encounterEnemies = (platform.encounter as CombatEncounterSO).enemies;
+        AutomaticFighter[] encounterEnemies = (platform.encounters[encounterIndex] as CombatEncounterSO).enemies;
         for (int i = 0; i < enemies.Length; i++)
         {
             if (encounterEnemies[i] == null)
                 continue;
 
-            enemies[i] = enemiesPool.GetEnemy(encounterEnemies[i].Title).GetComponent<Enemy>();
+            enemies[i] = enemiesPool.GetEnemy(encounterEnemies[i].Title).GetComponent<AutomaticFighter>();
 
             enemies[i].gameObject.SetActive(true);
             platform.MoveToEnemy(enemies[i].gameObject.transform, i);
@@ -55,20 +54,5 @@ public class CombatResolver : MonoBehaviour
         {
             onEndCombat?.Invoke();
         }
-    }
-
-    private void DropItems()
-    {
-        int resultItemsAmount = 0;
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (enemies[i] == null)
-                continue;
-
-            resultItemsAmount += enemies[i].DropItemsAmount;
-        }
-
-        //inventory.AddItems(itemsPool.GetItems(resultItemsAmount, Rarity.common));
     }
 }

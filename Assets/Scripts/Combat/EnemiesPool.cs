@@ -11,23 +11,27 @@ public class EnemiesPool : MonoBehaviour
     {
         foreach (var platfrom in levelManager.platformsForRead)
         {
-            if (!(platfrom.encounter is CombatEncounterSO))
-                continue;
 
-            Queue<GameObject> tempQueue = new Queue<GameObject>();
-            foreach (var enemy in (platfrom.encounter as CombatEncounterSO).enemies)
+            for (int i = 0; i < platfrom.encounters.Length; i++)
             {
-                if (enemy == null)
+                if (!(platfrom.encounters[i] is CombatEncounterSO))
                     continue;
 
-                GameObject tempEnenmy = Instantiate(enemy.gameObject);
-                string tempTittle = tempEnenmy.GetComponent<Enemy>().Title;
-                tempEnenmy.SetActive(false);
+                Queue<GameObject> tempQueue = new Queue<GameObject>();
+                foreach (var enemy in (platfrom.encounters[i] as CombatEncounterSO).enemies)
+                {
+                    if (enemy == null)
+                        continue;
 
-                if (!pool.ContainsKey(tempTittle))
-                    pool.Add(tempTittle, new Queue<GameObject>());
+                    GameObject tempEnenmy = Instantiate(enemy.gameObject);
+                    string tempTittle = tempEnenmy.GetComponent<AutomaticFighter>().Title;
+                    tempEnenmy.SetActive(false);
 
-                pool[tempTittle].Enqueue(tempEnenmy);
+                    if (!pool.ContainsKey(tempTittle))
+                        pool.Add(tempTittle, new Queue<GameObject>());
+
+                    pool[tempTittle].Enqueue(tempEnenmy);
+                }
             }
         }
     }

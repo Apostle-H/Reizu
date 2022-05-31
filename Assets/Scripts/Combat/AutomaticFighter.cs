@@ -4,15 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Enemy : Entity
+public class AutomaticFighter : Entity
 {
     [SerializeField] private Rarity rarity;
     [SerializeField] private float attackSpeed;
-
-    [SerializeField] private int minItems;
-    [SerializeField] private int maxItems;
-
-    public int DropItemsAmount { get { return Random.Range(minItems, maxItems); } }
 
     public IEnumerator Fight(Entity enemy)
     {
