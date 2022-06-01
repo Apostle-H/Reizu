@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84461eb7e786cf4bacc594eb9b3982d, type: 3}
-  m_Name: TestCombbat
+  m_Script: {fileID: 11500000, guid: 72264b342be02cb4ebd6f4c480ca0a3d, type: 3}
+  m_Name: Player
   m_EditorClassIdentifier: 
-  enemiesRarity: 0000000000000000
+  title: Player
+  health: 30
+  defence: 2
+  damage: 5

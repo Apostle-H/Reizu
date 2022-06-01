@@ -9,7 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84461eb7e786cf4bacc594eb9b3982d, type: 3}
-  m_Name: TestCombbat
+  m_Script: {fileID: 11500000, guid: dac16706e0eba814aaa217608f7cffde, type: 3}
+  m_Name: Test
   m_EditorClassIdentifier: 
-  enemiesRarity: 0000000000000000
+  title: Tets
+  rarity: 0
+  type: 3
+  riseStat: 1
+  riseValue: 5
+  inStock: 2
+  GFX: {fileID: 8561436127320091396, guid: 9e09b147df82fed49baa2aa229660dfb, type: 3}
