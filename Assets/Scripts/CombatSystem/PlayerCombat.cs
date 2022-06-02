@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour, IEntity
     [SerializeField] private Image healtBarUI;
 
     public event Void onDie;
+    public event Void onPunch;
 
     private int healthLeft;
 
@@ -59,7 +60,11 @@ public class PlayerCombat : MonoBehaviour, IEntity
         return true;
     }
 
-    public void Attack(IEntity enemy) => enemy?.TakeDamage(resultDamage);
+    public void Attack(IEntity enemy)
+    {
+        onPunch?.Invoke();
+        enemy?.TakeDamage(resultDamage);
+    }
 
     private void OnEquip(Item previousItem, Item newItem)
     {

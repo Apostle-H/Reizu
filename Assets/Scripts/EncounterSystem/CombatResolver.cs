@@ -29,31 +29,29 @@ public class CombatResolver : MonoBehaviour
         for (int i = 0; i < enemiesRarity.Length; i++)
             enemies[i] = enemiesPool.GetEnemy(enemiesRarity[i]);
 
-        foreach (var enemy in enemies)
+        for (int i = 0; i < enemies.Length; i++)
         {
-            if (enemy == null)
+            if (enemies[i] == null)
                 continue;
 
-            enemy.gameObject.SetActive(true);
-            platform.MoveToEnemy(enemy.gameObject.transform);
+            enemies[i].gameObject.SetActive(true);
+            enemies[i].transform.position = platform.CombatEnemiesAnchors[i].position;  
 
-            StartCoroutine(enemy.Fight(player));
+            StartCoroutine(enemies[i].Fight(player));
         }
-
-        platform.MoveToCombat(player.transform);
 
         if (inventory.summons == null)
             return;
 
-        foreach (var summonAsItem in inventory.summons)
+        for (int i = 0; i < inventory.summons.Length; i++)
         {
-            if (summonAsItem == null)
+            if (inventory.summons[i] == null)
                 continue;
 
-            Summon realSummon = (Summon)summonAsItem;
+            Summon realSummon = (Summon)inventory.summons[i];
 
             realSummon.fighter.gameObject.SetActive(true);
-            platform.MoveToSummon(realSummon.fighter.transform);
+            realSummon.fighter.transform.position = platform.CombatSummonsAnchors[i].position;
 
             StartCoroutine(realSummon.fighter.Fight(enemies));
         }

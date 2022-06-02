@@ -24,7 +24,10 @@ public class EnemiesPool : MonoBehaviour
         LoadLevelEnemies();
     }
 
-    public AutomaticFighter GetEnemy(Rarity rarity) => levelPool[rarity]?.Dequeue();
+    public AutomaticFighter GetEnemy(Rarity rarity) 
+    {
+        return levelPool[rarity]?.Dequeue();
+    } 
 
     private void LoadGlobalEnemies(Rarity rarity) =>
         globalPool[rarity] = Resources.LoadAll<GameObject>(@$"Enemies\{rarity}");

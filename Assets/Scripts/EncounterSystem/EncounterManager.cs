@@ -18,7 +18,7 @@ public class EncounterManager : MonoBehaviour
 
     private void OnEnable()
     {
-        explore.onCameOnPlatform += FaceEncounter;
+        explore.onCameOnPlatform += (platfrom, player) => FaceEncounter(platfrom);
 
         combatResolver.onEndCombat += FinishEncounter;
         chestResolver.onClose += FinishEncounter;
@@ -27,7 +27,7 @@ public class EncounterManager : MonoBehaviour
 
     private void OnDisable()
     {
-        explore.onCameOnPlatform -= FaceEncounter;
+        explore.onCameOnPlatform -= (platfrom, player) => FaceEncounter(platfrom);
 
         combatResolver.onEndCombat -= FinishEncounter;
         chestResolver.onClose -= FinishEncounter;
@@ -36,7 +36,7 @@ public class EncounterManager : MonoBehaviour
 
     public void FaceEncounter(Platform platfrom)
     {
-        if (platfrom.encounters == null || platfrom.encounters.Length < 1)
+        if (platfrom.encounters == null || platfrom.encounters.Length < 1 || platfrom.encountersResolved    )
             return;
 
         currentPlatform = platfrom;
