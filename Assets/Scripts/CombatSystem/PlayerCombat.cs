@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+[DefaultExecutionOrder(-1)]
 public class PlayerCombat : MonoBehaviour, IEntity
 {
     [SerializeField] private EntitySO info;
@@ -19,6 +20,8 @@ public class PlayerCombat : MonoBehaviour, IEntity
     public event Void onPunch;
 
     private int healthLeft;
+
+    private bool isDead = false;
 
     private int itemDamageBonus;
     private int itemDefenceBonus;
@@ -62,6 +65,9 @@ public class PlayerCombat : MonoBehaviour, IEntity
 
     public void Attack(IEntity enemy)
     {
+        if (isDead)
+            return;
+
         onPunch?.Invoke();
         enemy?.TakeDamage(resultDamage);
     }
@@ -72,10 +78,10 @@ public class PlayerCombat : MonoBehaviour, IEntity
         {
             switch (previousItem.RiseStat)
             {
-                case Stat.damage:
+                case Stat.dmg:
                     itemDamageBonus -= previousItem.RiseValue;
                     break;
-                case Stat.defence:
+                case Stat.def:
                     itemDefenceBonus -= previousItem.RiseValue;
                     break;
             }
@@ -85,10 +91,10 @@ public class PlayerCombat : MonoBehaviour, IEntity
         {
             switch (newItem.RiseStat)
             {
-                case Stat.damage:
+                case Stat.dmg:
                     itemDamageBonus += newItem.RiseValue;
                     break;
-                case Stat.defence:
+                case Stat.def:
                     itemDefenceBonus += newItem.RiseValue;
                     break;
             }

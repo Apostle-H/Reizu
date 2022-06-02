@@ -9,5 +9,5 @@ public class SummonSO : ItemSO
 
     public GameObject graphics { get { return GFX; } }
 
-    public Summon CreateInstance(AutomaticFighter fighter) => new Summon(title, rarity, type, riseStat, riseValue, fighter);
+    public Summon CreateInstance(AutomaticFighter fighter) => new Summon(title, rarity, type, riseStat, riseValue, sprite, fighter);
 }

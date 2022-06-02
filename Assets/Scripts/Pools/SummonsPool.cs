@@ -28,6 +28,9 @@ public class SummonsPool : MonoBehaviour
 
     public Summon GetSummon(Rarity rarity) => levelSummonPool[rarity]?.Dequeue();
 
+    public AutomaticFighter GetNewFighter(Rarity rarity, string title) => 
+        Instantiate(globalSummonPool[rarity].FirstOrDefault(summon => summon.Title == title).graphics).GetComponent<AutomaticFighter>();
+
     private void LoadGlobalSummons(Rarity rarity) => globalSummonPool[rarity] = Resources.LoadAll<SummonSO>(@$"Summons\{rarity}");
 
     private void LoadLevelSummons()
@@ -40,7 +43,6 @@ public class SummonsPool : MonoBehaviour
             SummonSO[] tempPool = globalSummonPool[rarity];
             SummonSO tempSummon = tempPool[UnityEngine.Random.Range(0, tempPool.Length)];
             GameObject fighterInstance = Instantiate(tempSummon.graphics);
-            fighterInstance.SetActive(false);
 
             levelSummonPool[rarity].Enqueue(tempSummon.CreateInstance(fighterInstance.GetComponent<AutomaticFighter>()));
         }

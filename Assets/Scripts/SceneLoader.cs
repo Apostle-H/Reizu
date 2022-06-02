@@ -6,38 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private Button[] levelsBtns;
+    [SerializeField] private Button Play;
+    [SerializeField] private Button MainMenu;
+    [SerializeField] private Button Exit;
 
     private void OnEnable()
     {
-        if (levelsBtns != null)
-        {
-            for (int i = 0; i < levelsBtns.Length; i++)
-            {
-                int tempI = i;
-                levelsBtns[i].onClick.AddListener(() => LoadScene(tempI));
-            }
-        }
+        Play?.onClick.AddListener(() => LoadScene(1));
+        MainMenu?.onClick.AddListener(() => LoadScene(0));
+        Exit?.onClick.AddListener(() => Application.Quit());
     }
 
     private void OnDisable()
     {
-        if (levelsBtns != null)
-        {
-            foreach (var levelBtn in levelsBtns)
-            {
-                levelBtn.onClick.RemoveAllListeners();
-            }
-        }
+        Play?.onClick.RemoveListener(() => LoadScene(1));
+        MainMenu?.onClick.RemoveListener(() => LoadScene(0));
+        Exit?.onClick.RemoveListener(() => Application.Quit());
     }
 
     private void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
-    }
-
-    private void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
     }
 }

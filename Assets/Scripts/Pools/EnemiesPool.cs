@@ -41,7 +41,6 @@ public class EnemiesPool : MonoBehaviour
         {
             GameObject[] tempPool = globalPool[rarity].ToArray();
             GameObject fighterInstance = Instantiate(tempPool[UnityEngine.Random.Range(0, tempPool.Length)]);
-            fighterInstance.SetActive(false);
 
             levelPool[rarity].Enqueue(fighterInstance.GetComponent<AutomaticFighter>());
         }

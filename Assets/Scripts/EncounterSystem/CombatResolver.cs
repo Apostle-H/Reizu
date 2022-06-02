@@ -69,8 +69,6 @@ public class CombatResolver : MonoBehaviour
                 Summon realSummon = (Summon)inventory.summons[i];
 
                 realSummon.fighter.gameObject.SetActive(true);
-
-                StopCoroutine(realSummon.fighter.Fight(enemies));
             }
             onEndCombat?.Invoke();
         }

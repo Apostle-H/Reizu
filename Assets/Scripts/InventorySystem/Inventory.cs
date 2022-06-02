@@ -2,23 +2,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private ItemMover itemMover;
+    [SerializeField] private PlayerCombat playerCombat;
+    [SerializeField] private SummonsPool summonsPool;
 
     [SerializeField] private EquipSlot[] equipSlots;
     [SerializeField] private ItemSlot[] itemSlots;
 
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private GameObject losePanel;
 
     public delegate void Equip(Item previousItem, Item newItem);
     public event Equip onEquipChanged;
 
     public Item[] summons { get { return equipSlots.Select(slot => slot.item).Where(item => item == null ? false : item.Type == ItemType.summon).ToArray() ; }  }
 
+    public Item[] equip { get { return equipSlots.Select(slot => slot.item).ToArray(); } }
+    public Item[] items { get { return itemSlots.Select(slot => slot.item).ToArray(); } }
+
     private void OnEnable()
     {
+        SaveLoad.onSaved += () => losePanel.SetActive(true);
+
         for (int i = 0; i < itemSlots.Length; i++)
         {
             int tempI = i;
@@ -31,6 +40,11 @@ public class Inventory : MonoBehaviour
             equipSlots[i].itemButton.onClick.AddListener(() => itemMover.Choose(equipSlots[tempI]));
             equipSlots[i].onEquip += (Item prevoiusItem, Item newItem) => onEquipChanged?.Invoke(prevoiusItem, newItem);
         }
+
+        playerCombat.onDie += Save;
+        SaveLoad.onSaved += () => losePanel.SetActive(true);
+
+        Load();
     }
 
     private void OnDisable()
@@ -42,6 +56,49 @@ public class Inventory : MonoBehaviour
         {
             equipSlots[i].itemButton.onClick.RemoveAllListeners();
             equipSlots[i].onEquip -= (Item prevoiusItem, Item newItem) => onEquipChanged?.Invoke(prevoiusItem, newItem);
+        }
+    }
+
+    private void Save()
+    {
+        Debug.Log("save");
+        SaveLoad.WriteJson(this);
+    }
+
+    private void Load()
+    {
+        Dictionary<string, Item[]> savedItems = SaveLoad.ReadJson();
+
+        if (savedItems == null)
+            return;
+
+        for (int i = 0; i < savedItems["equip"].Length; i++)
+        {
+            if (equipSlots[i].item == null || equipSlots[i].item.Type != ItemType.summon)
+            {
+                equipSlots[i].TrySetItem(savedItems["equip"][i]);
+            }
+            else
+            {
+                Item previuosSummon = savedItems["equip"][i];
+                Summon copy = new Summon(previuosSummon.Title, previuosSummon.Rarity, previuosSummon.Type, previuosSummon.RiseStat,
+                    previuosSummon.RiseValue, previuosSummon.Sprite, summonsPool.GetNewFighter(previuosSummon.Rarity, previuosSummon.Title));
+                equipSlots[i].TrySetItem(copy);
+            }
+        }
+        for (int i = 0; i < savedItems["items"].Length; i++)
+        {
+            if (itemSlots[i].item == null || itemSlots[i].item.Type != ItemType.summon)
+            {
+                itemSlots[i].TrySetItem(savedItems["items"][i]);
+            }
+            else
+            {
+                Item previuosSummon = savedItems["items"][i];
+                Summon copy = new Summon(previuosSummon.Title, previuosSummon.Rarity, previuosSummon.Type, previuosSummon.RiseStat,
+                    previuosSummon.RiseValue, previuosSummon.Sprite, summonsPool.GetNewFighter(previuosSummon.Rarity, previuosSummon.Title));
+                itemSlots[i].TrySetItem(copy);
+            }
         }
     }
 }

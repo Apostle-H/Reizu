@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class AutomaticFighter : MonoBehaviour, IEntity
 {
@@ -19,7 +20,13 @@ public class AutomaticFighter : MonoBehaviour, IEntity
     {
         title.text = info.Title;
         healthLeft = info.Health;
+        transform.localScale = Vector3.zero;
+        gameObject.SetActive(false);
+    }
 
+    private void OnEnable()
+    {
+        transform.DOScale(1f, .5f);
     }
 
     public void Attack(IEntity enemy) => enemy?.TakeDamage(info.Damage);
@@ -35,6 +42,7 @@ public class AutomaticFighter : MonoBehaviour, IEntity
         if (healthLeft > 0)
             return false;
 
+        transform.DOScale(0f, .3f).onComplete += () => gameObject.SetActive(false);
         isDead = true;
         return true;
     }

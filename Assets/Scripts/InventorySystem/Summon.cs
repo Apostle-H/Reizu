@@ -8,7 +8,7 @@ public class Summon : Item
 
     public AutomaticFighter fighter { get { return automaticFighter; } }
 
-    public Summon(string title, Rarity rarity, ItemType type, Stat riseStat, int riseValue, AutomaticFighter fighter) : base(title, rarity, type, riseStat, riseValue)
+    public Summon(string title, Rarity rarity, ItemType type, Stat riseStat, int riseValue, Sprite sprite, AutomaticFighter fighter) : base(title, rarity, type, riseStat, riseValue, sprite)
     {
         automaticFighter = fighter;
     }

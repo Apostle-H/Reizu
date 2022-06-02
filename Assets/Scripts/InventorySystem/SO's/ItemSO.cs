@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,8 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     [SerializeField] protected string title;
+    [SerializeField] protected Sprite sprite;
+
     [SerializeField] protected Rarity rarity;
 
     [SerializeField] protected ItemType type;
@@ -14,8 +16,9 @@ public class ItemSO : ScriptableObject
     [SerializeField] protected int riseValue;
 
     public string Title { get { return title; } }
+    public Sprite Sprite { get { return sprite; } }
     public ItemType Type { get { return type; } }
     public int RiseValue { get { return riseValue; } }
 
-    public virtual Item CreateInstance() => new Item(title, rarity, type, riseStat, riseValue);
+    public virtual Item CreateInstance() => new Item(title, rarity, type, riseStat, riseValue, sprite);
 }

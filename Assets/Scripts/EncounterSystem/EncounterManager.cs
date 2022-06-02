@@ -13,7 +13,6 @@ public class EncounterManager : MonoBehaviour
     private EncounterSO currentEncounter;
     private int encounterIndex = 0;
 
-    public event Void onStartEncounter;
     public event Void onEndEncounter;
 
     private void OnEnable()
@@ -41,8 +40,6 @@ public class EncounterManager : MonoBehaviour
 
         currentPlatform = platfrom;
         currentEncounter = platfrom.encounters[encounterIndex];
-
-        onStartEncounter?.Invoke();
 
         if (currentEncounter is CombatEncounterSO)
         {

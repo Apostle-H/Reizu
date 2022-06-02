@@ -58,6 +58,6 @@ public class PlayerMover : MonoBehaviour
 
         onStartMovement?.Invoke(player);
         virtualCamera.Follow = currentPlatform.transform;
-        player.DOMove(currentPlatform.MainAnchor.position, 2f).onComplete += () => { onCameOnPlatform?.Invoke(currentPlatform, player); if (this.enabled) { swipeDetector.onSwipe += Move; } };
+        player.DOMove(currentPlatform.MainAnchor.position, 2f).onComplete += () => { onCameOnPlatform?.Invoke(currentPlatform, player); if (enabled) { swipeDetector.onSwipe += Move; } };
     }
 }

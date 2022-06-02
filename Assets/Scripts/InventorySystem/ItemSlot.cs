@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemSlot : MonoBehaviour
 {
     public Item item { get; private set; }
 
     [SerializeField] private Button corespondingButton;
+    [SerializeField] private Image corespondingImage;
+    [SerializeField] private TextMeshProUGUI statText;
 
     [SerializeField] private bool onlyTake;
 
@@ -35,6 +38,17 @@ public class ItemSlot : MonoBehaviour
 
     protected void ShowHideItem(bool show)
     {
-        transform.GetChild(0).gameObject.SetActive(show);
+        corespondingImage.sprite = show ? item.Sprite : null;
+        corespondingImage.enabled = show;
+
+        if (item != null && item.Type == ItemType.consumable)
+            return;
+
+        statText.enabled = show;
+
+        if (item == null || !show)
+            return;
+
+        statText.text = $"{item.RiseStat}: {item.RiseValue}";
     }
 }
