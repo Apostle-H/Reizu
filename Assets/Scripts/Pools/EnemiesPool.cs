@@ -17,7 +17,7 @@ public class EnemiesPool : MonoBehaviour
         {
             Rarity tempRarity = (Rarity)rarity;
 
-            levelPool[tempRarity] = new Queue<AutomaticFighter>();
+            levelPool[tempRarity] = new Queue<AutomaticFighter>();  
 
             LoadGlobalEnemies(tempRarity);
         }
