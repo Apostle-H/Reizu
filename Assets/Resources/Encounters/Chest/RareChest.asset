@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a617c221a3e24c448f281e4ec89fa62, type: 3}
   m_Name: RareChest
   m_EditorClassIdentifier: 
-  rarity: 0
-  minItemsAmount: 0
-  maxItemsAmount: 0
+  rarity: 1
+  minItemsAmount: 1
+  maxItemsAmount: 4

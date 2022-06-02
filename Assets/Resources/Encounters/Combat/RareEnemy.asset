@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84461eb7e786cf4bacc594eb9b3982d, type: 3}
   m_Name: RareEnemy
   m_EditorClassIdentifier: 
-  enemiesRarity: 
+  enemiesRarity: 010000000100000001000000

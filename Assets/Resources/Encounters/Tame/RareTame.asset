@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a6fb218a8eb9748983cd2525063935, type: 3}
   m_Name: RareTame
   m_EditorClassIdentifier: 
-  rarity: 0
-  tameChance: 0
+  rarity: 1
+  tameChance: 0.4
