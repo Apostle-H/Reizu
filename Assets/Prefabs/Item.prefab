@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   corespondingButton: {fileID: 5076093681296397426}
+  onlyTake: 0
 --- !u!1 &2265067281120091199
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9443f6dfb74336e4a861c0ed03f5beea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
