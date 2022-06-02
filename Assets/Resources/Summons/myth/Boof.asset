@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Boof
   m_EditorClassIdentifier: 
   title: Boof
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 3
   type: 3
   riseStat: 1
   riseValue: 8
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: 30d0136d0a49f734b8391e2c77078190, type: 3}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BigChan
   m_EditorClassIdentifier: 
   title: Big Chan
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 1
   type: 3
   riseStat: 0
   riseValue: 6
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: 54b43203ca4acf54790d55cded1adcff, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrashArmor
   m_EditorClassIdentifier: 
   title: Trash Armor
+  sprite: {fileID: 21300000, guid: d56ca391e9e4be94990dd9d277372a5d, type: 3}
   rarity: 0
   type: 1
   riseStat: 1

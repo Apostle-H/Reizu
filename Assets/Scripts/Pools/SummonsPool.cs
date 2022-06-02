@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
+[DefaultExecutionOrder(-2)]
 public class SummonsPool : MonoBehaviour
 {
     [SerializeField] private LevelManager level;
@@ -28,8 +29,14 @@ public class SummonsPool : MonoBehaviour
 
     public Summon GetSummon(Rarity rarity) => levelSummonPool[rarity]?.Dequeue();
 
-    public AutomaticFighter GetNewFighter(Rarity rarity, string title) => 
-        Instantiate(globalSummonPool[rarity].FirstOrDefault(summon => summon.Title == title).graphics).GetComponent<AutomaticFighter>();
+    public Summon LoadSummon(Rarity rarity, string title)
+    {
+        SummonSO[] tempPool = globalSummonPool[rarity];
+        SummonSO tempSummon = tempPool.FirstOrDefault(summon => summon.Title == title);
+        GameObject fighterInstance = Instantiate(tempSummon.graphics);
+
+        return tempSummon.CreateInstance(fighterInstance.GetComponent<AutomaticFighter>());
+    }
 
     private void LoadGlobalSummons(Rarity rarity) => globalSummonPool[rarity] = Resources.LoadAll<SummonSO>(@$"Summons\{rarity}");
 

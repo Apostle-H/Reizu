@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Poof
   m_EditorClassIdentifier: 
   title: Poof
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 3
   type: 3
   riseStat: 0
   riseValue: 8
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: 88966f05133d0ad42bdb0c4e54e45adf, type: 3}

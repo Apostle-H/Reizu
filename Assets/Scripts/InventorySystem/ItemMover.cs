@@ -9,18 +9,15 @@ public class ItemMover : MonoBehaviour
     private ItemSlot currentSlot;
     private ItemSlot targetSlot;
 
-    private bool isCurrentSlotChosen = false;
-
     public void Choose(ItemSlot itemSlot)
     {
-        if (!isCurrentSlotChosen)
+        if (currentSlot == null && itemSlot.item != null)
         {
             currentSlot = itemSlot;
-            isCurrentSlotChosen = true;
             return;
         }
 
-        if (itemSlot.OnlyTake)
+        if (itemSlot.OnlyTake || currentSlot == null)
             return;
 
         targetSlot = itemSlot;
@@ -35,6 +32,7 @@ public class ItemMover : MonoBehaviour
         if (targetSlot.TrySetItem(currentSlot.item))
             currentSlot.TrySetItem(tempItem);
 
-        isCurrentSlotChosen = false;
+        currentSlot = null;
+        targetSlot = null;
     }
 }

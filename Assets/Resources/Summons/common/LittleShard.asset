@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: LittleShard
   m_EditorClassIdentifier: 
   title: Little Shard
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 0
   type: 3
   riseStat: 0
   riseValue: 4
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: 9e09b147df82fed49baa2aa229660dfb, type: 3}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: LittleNight
   m_EditorClassIdentifier: 
   title: Little Night
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 2
   type: 3
   riseStat: 1
   riseValue: 13
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: d9430c83afb9c2a4ea88e294104b195f, type: 3}

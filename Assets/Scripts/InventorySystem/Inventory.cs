@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private ItemMover itemMover;
     [SerializeField] private PlayerCombat playerCombat;
+
+    [SerializeField] private ItemsPool itemsPool;
     [SerializeField] private SummonsPool summonsPool;
 
     [SerializeField] private EquipSlot[] equipSlots;
@@ -67,37 +69,41 @@ public class Inventory : MonoBehaviour
 
     private void Load()
     {
-        Dictionary<string, Item[]> savedItems = SaveLoad.ReadJson();
+        Dictionary<string, (Rarity, string, bool)[]> savedItems = SaveLoad.ReadJson();
 
         if (savedItems == null)
             return;
 
         for (int i = 0; i < savedItems["equip"].Length; i++)
         {
-            if (equipSlots[i].item == null || equipSlots[i].item.Type != ItemType.summon)
+            if (savedItems["equip"][i].Item2 == null)
+                continue;
+
+            if (!savedItems["equip"][i].Item3)
             {
-                equipSlots[i].TrySetItem(savedItems["equip"][i]);
+                Item tempItem = itemsPool.LoadItem(savedItems["equip"][i].Item1, savedItems["equip"][i].Item2);
+                equipSlots[i].TrySetItem(tempItem);
             }
             else
             {
-                Item previuosSummon = savedItems["equip"][i];
-                Summon copy = new Summon(previuosSummon.Title, previuosSummon.Rarity, previuosSummon.Type, previuosSummon.RiseStat,
-                    previuosSummon.RiseValue, previuosSummon.Sprite, summonsPool.GetNewFighter(previuosSummon.Rarity, previuosSummon.Title));
-                equipSlots[i].TrySetItem(copy);
+                Summon tempSummon = summonsPool.LoadSummon(savedItems["equip"][i].Item1, savedItems["equip"][i].Item2);
+                equipSlots[i].TrySetItem(tempSummon);
             }
         }
         for (int i = 0; i < savedItems["items"].Length; i++)
         {
-            if (itemSlots[i].item == null || itemSlots[i].item.Type != ItemType.summon)
+            if (savedItems["items"][i].Item2 == null)
+                continue;
+
+            if (!savedItems["items"][i].Item3)
             {
-                itemSlots[i].TrySetItem(savedItems["items"][i]);
+                Item tempItem = itemsPool.LoadItem(savedItems["items"][i].Item1, savedItems["items"][i].Item2);
+                itemSlots[i].TrySetItem(tempItem);
             }
             else
             {
-                Item previuosSummon = savedItems["items"][i];
-                Summon copy = new Summon(previuosSummon.Title, previuosSummon.Rarity, previuosSummon.Type, previuosSummon.RiseStat,
-                    previuosSummon.RiseValue, previuosSummon.Sprite, summonsPool.GetNewFighter(previuosSummon.Rarity, previuosSummon.Title));
-                itemSlots[i].TrySetItem(copy);
+                Summon tempSummon = summonsPool.LoadSummon(savedItems["items"][i].Item1, savedItems["items"][i].Item2);
+                itemSlots[i].TrySetItem(tempSummon);
             }
         }
     }

@@ -33,7 +33,10 @@ public class AutomaticFighter : MonoBehaviour, IEntity
 
     public bool TakeDamage(int damage)
     {
-        healthLeft -= damage - info.Defence;
+        if (isDead)
+            return true;
+
+        healthLeft -= damage - info.Defence < 0 ? 0 : damage - info.Defence;
         if (healtBarUI != null)
         {
             healtBarUI.fillAmount = (float)healthLeft / (float)info.Health;

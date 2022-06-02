@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Player
   health: 30
-  defence: 2
+  defence: 0
   damage: 5

@@ -50,10 +50,10 @@ public class CombatResolver : MonoBehaviour
 
             Summon realSummon = (Summon)inventory.summons[i];
 
-            realSummon.fighter.gameObject.SetActive(true);
-            realSummon.fighter.transform.position = platform.CombatSummonsAnchors[i].position;
+            realSummon.fighter().gameObject.SetActive(true);
+            realSummon.fighter().transform.position = platform.CombatSummonsAnchors[i].position;
 
-            StartCoroutine(realSummon.fighter.Fight(enemies));
+            StartCoroutine(realSummon.fighter().Fight(enemies));
         }
     }
 
@@ -68,7 +68,7 @@ public class CombatResolver : MonoBehaviour
             {
                 Summon realSummon = (Summon)inventory.summons[i];
 
-                realSummon.fighter.gameObject.SetActive(true);
+                realSummon.fighter().gameObject.SetActive(true);
             }
             onEndCombat?.Invoke();
         }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-2)]
 public class EnemiesPool : MonoBehaviour
 {
     [SerializeField] LevelManager level;

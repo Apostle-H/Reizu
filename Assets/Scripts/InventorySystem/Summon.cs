@@ -6,7 +6,7 @@ public class Summon : Item
 {
     [SerializeField] private AutomaticFighter automaticFighter;
 
-    public AutomaticFighter fighter { get { return automaticFighter; } }
+    public AutomaticFighter fighter() { return automaticFighter; }
 
     public Summon(string title, Rarity rarity, ItemType type, Stat riseStat, int riseValue, Sprite sprite, AutomaticFighter fighter) : base(title, rarity, type, riseStat, riseValue, sprite)
     {

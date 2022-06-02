@@ -52,6 +52,9 @@ public class PlayerCombat : MonoBehaviour, IEntity
 
     public bool TakeDamage(int damage)
     {
+        if (isDead)
+            return true;
+
         healthLeft -= damage - resultDefence < 0 ? 0 : damage - resultDefence;
         healtBarUI.fillAmount = (float)healthLeft / (float)info.Health;
         healthUI.text = $"{healthLeft}/{info.Health}";
@@ -59,6 +62,7 @@ public class PlayerCombat : MonoBehaviour, IEntity
         if (healthLeft > 0)
             return false;
 
+        isDead = true;
         onDie?.Invoke();
         return true;
     }

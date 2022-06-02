@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+[DefaultExecutionOrder(-2)]
 public class ItemsPool : MonoBehaviour
 {
     [SerializeField] private LevelManager level;
@@ -33,6 +34,12 @@ public class ItemsPool : MonoBehaviour
         resultAmount = startingIndex + amount > levelItemsPool[rarity].Count ? amount - ((startingIndex + amount) - levelItemsPool[rarity].Count) : amount;
 
         return levelItemsPool[rarity].GetRangeOut(startingIndex, resultAmount);
+    }
+
+    public Item LoadItem(Rarity rarity, string title)
+    {
+        ItemSO[] tempPool = globalItemsPool[rarity];
+        return tempPool.FirstOrDefault(summon => summon.Title == title).CreateInstance();
     }
 
     private void LoadGlobalItems(Rarity rarity) => globalItemsPool[rarity] = Resources.LoadAll<ItemSO>(@$"Items\{rarity}");

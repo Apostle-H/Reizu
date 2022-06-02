@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using System.Linq;
 
 public static class SaveLoad
 {
@@ -17,16 +18,16 @@ public static class SaveLoad
         using (StreamWriter sw = new StreamWriter(inventoryPath))
         using (JsonWriter jsonWriter = new JsonTextWriter(sw))
         {
-            Dictionary<string, Item[]> items = new Dictionary<string, Item[]>();
-            items.Add("equip", inventory.equip);
-            items.Add("items", inventory.items);
+            Dictionary<string, (Rarity, string, bool)[]> items = new Dictionary<string, (Rarity, string, bool)[]>();
+            items.Add("equip", inventory.equip.Select(item => item == null ? (Rarity.myth, null, false) : (item.Rarity, item.Title, item.Type == ItemType.summon)).ToArray());
+            items.Add("items", inventory.items.Select(item => item == null ? (Rarity.myth, null, false) : (item.Rarity, item.Title, item.Type == ItemType.summon)).ToArray());
             serializer.Serialize(jsonWriter, items);
         }
 
         onSaved?.Invoke();
     }
 
-    public static Dictionary<string, Item[]> ReadJson()
+    public static Dictionary<string, (Rarity, string, bool)[]> ReadJson()
     {
         if (!File.Exists(inventoryPath))
             return null;
@@ -34,7 +35,7 @@ public static class SaveLoad
         using (StreamReader file = File.OpenText(inventoryPath))
         {
             JsonSerializer serializer = new JsonSerializer();
-            return serializer.Deserialize(file, typeof(Dictionary<string, Item[]>)) as Dictionary<string, Item[]>;
+            return serializer.Deserialize(file, typeof(Dictionary<string, (Rarity, string, bool)[]>)) as Dictionary<string, (Rarity, string, bool)[]>;
         }
     }
 }

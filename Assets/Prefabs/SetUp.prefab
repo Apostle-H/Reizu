@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemMover: {fileID: 6401315006124976168}
   playerCombat: {fileID: 3679306243969710896}
+  itemsPool: {fileID: 4264726446736021250}
   summonsPool: {fileID: 258169881932157060}
   equipSlots:
   - {fileID: 6959931904424596604}
@@ -322,7 +323,7 @@ MonoBehaviour:
   - {fileID: 9117755887681913217}
   - {fileID: 1516646646697612194}
   inventoryPanel: {fileID: 1357324676476682152}
-  losePanel: {fileID: 0}
+  losePanel: {fileID: 8233914885305747968}
 --- !u!1 &764360035554688558
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +543,7 @@ MonoBehaviour:
   tamePanel: {fileID: 8708082561144169062}
   tameBtn: {fileID: 9200045216470893861}
   leaveBtn: {fileID: 1018764608121687867}
-  tameChanceUI: {fileID: 901590042088824066}
+  tameChanceUI: {fileID: 8470295680541521423}
 --- !u!114 &2114611427315294136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4390,6 +4391,10 @@ PrefabInstance:
       propertyPath: fitingType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
     - target: {fileID: 6424336107418564803, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4768,6 +4773,26 @@ PrefabInstance:
     - target: {fileID: 1231834859514368223, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: fitingType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a6b640c5ca2fd3409ec73041ee869cd, type: 3}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6424336107418564803, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Pivot.x
@@ -5148,6 +5173,10 @@ PrefabInstance:
       propertyPath: fitingType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
     - target: {fileID: 6424336107418564803, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5281,6 +5310,22 @@ PrefabInstance:
       propertyPath: fitingType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7754094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7754094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
     - target: {fileID: 6424336107418564803, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5410,6 +5455,10 @@ PrefabInstance:
       propertyPath: fitingType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c7bc6bf7791824b47870e4afddef3f89, type: 3}
     - target: {fileID: 6424336107418564803, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

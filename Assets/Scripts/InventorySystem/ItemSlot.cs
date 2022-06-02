@@ -42,9 +42,9 @@ public class ItemSlot : MonoBehaviour
         corespondingImage.enabled = show;
 
         if (item != null && item.Type == ItemType.consumable)
-            return;
-
-        statText.enabled = show;
+            statText.enabled = false;
+        else
+            statText.enabled = show;
 
         if (item == null || !show)
             return;

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BigFlop
   m_EditorClassIdentifier: 
   title: Big Flop
+  sprite: {fileID: 21300000, guid: 3585095e18880464e92b809b9ec029ce, type: 3}
   rarity: 2
   type: 3
   riseStat: 0
   riseValue: 13
-  GFX: {fileID: 0}
+  GFX: {fileID: 8561436127320091396, guid: 899f0df346119c148a67ca35e77d322d, type: 3}
