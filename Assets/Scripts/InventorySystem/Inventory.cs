@@ -5,14 +5,12 @@ using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private EncounterManager encounterManager;
     [SerializeField] private ItemMover itemMover;
 
     [SerializeField] private EquipSlot[] equipSlots;
     [SerializeField] private ItemSlot[] itemSlots;
 
     [SerializeField] private GameObject inventoryPanel;
-    [SerializeField] private Button openCloseBtn;
 
     public delegate void Equip(Item previousItem, Item newItem);
     public event Equip onEquipChanged;
@@ -21,10 +19,6 @@ public class Inventory : MonoBehaviour
 
     private void OnEnable()
     {
-        openCloseBtn.onClick.AddListener(OpenClose);
-        encounterManager.onStartEncounter += () => OpenClose(true);
-        encounterManager.onEndEncounter += () => OpenClose(false);
-
         for (int i = 0; i < itemSlots.Length; i++)
         {
             int tempI = i;
@@ -41,10 +35,6 @@ public class Inventory : MonoBehaviour
 
     private void OnDisable()
     {
-        openCloseBtn.onClick.RemoveAllListeners();
-        encounterManager.onStartEncounter -= () => OpenClose(true);
-        encounterManager.onEndEncounter -= () => OpenClose(false);
-
         for (int i = 0; i < itemSlots.Length; i++)
             itemSlots[i].itemButton.onClick.RemoveAllListeners();
 
@@ -54,7 +44,4 @@ public class Inventory : MonoBehaviour
             equipSlots[i].onEquip -= (Item prevoiusItem, Item newItem) => onEquipChanged?.Invoke(prevoiusItem, newItem);
         }
     }
-
-    private void OpenClose() => inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-    private void OpenClose(bool active) => inventoryPanel.SetActive(active);
 }

@@ -7,8 +7,8 @@ public class ChestEncounterSO : EncounterSO
 {
     [SerializeField] private Rarity rarity;
 
-    [SerializeField] [Range(1, 3)] private int minItemsAmount;
-    [SerializeField] [Range(1, 3)] private int maxItemsAmount;
+    [SerializeField] [Range(1, 4)] private int minItemsAmount;
+    [SerializeField] [Range(1, 4)] private int maxItemsAmount;
 
     public Rarity Rarity { get { return rarity; } }
     public int MinItemsAmount { get { return minItemsAmount; } }
