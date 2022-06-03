@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LittleMidlBite
   m_EditorClassIdentifier: 
   title: Little Midl Bite
+  sprite: {fileID: 21300000, guid: 4a6b640c5ca2fd3409ec73041ee869cd, type: 3}
   rarity: 1
   type: 2
   riseStat: 0

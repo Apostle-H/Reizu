@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RainForsArmor
   m_EditorClassIdentifier: 
   title: Rain Fors Armor
+  sprite: {fileID: 21300000, guid: df6c9b1d36fd8ae4d9f80a363e9556e2, type: 3}
   rarity: 2
   type: 1
   riseStat: 1

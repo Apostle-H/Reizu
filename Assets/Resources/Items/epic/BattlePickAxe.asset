@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BattlePickAxe
   m_EditorClassIdentifier: 
   title: Battle Pick Axe
+  sprite: {fileID: 21300000, guid: 3e6745332987f8d49a09f58985b624f4, type: 3}
   rarity: 2
   type: 0
   riseStat: 0

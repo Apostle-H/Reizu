@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrashShowln
   m_EditorClassIdentifier: 
   title: Trash Showln
+  sprite: {fileID: 21300000, guid: 3d7a489641a72984ea74aded39be42c4, type: 3}
   rarity: 0
   type: 0
   riseStat: 0

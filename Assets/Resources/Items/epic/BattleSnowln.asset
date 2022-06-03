@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BattleSnowln
   m_EditorClassIdentifier: 
   title: Battle Snowln
+  sprite: {fileID: 21300000, guid: 83c7e0c6ba60a0941ab7c4b6103df976, type: 3}
   rarity: 2
   type: 0
   riseStat: 0

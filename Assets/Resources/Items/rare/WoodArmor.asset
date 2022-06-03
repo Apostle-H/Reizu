@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WoodArmor
   m_EditorClassIdentifier: 
   title: Wood Armor
+  sprite: {fileID: 21300000, guid: d344c4e855ec18845aac70c9428ddf19, type: 3}
   rarity: 1
   type: 1
   riseStat: 1

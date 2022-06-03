@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrashSworld
   m_EditorClassIdentifier: 
   title: Trash Sworld
+  sprite: {fileID: 21300000, guid: 129751dd5e0b93746913e8e98111665f, type: 3}
   rarity: 0
   type: 0
   riseStat: 0
