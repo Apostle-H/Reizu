@@ -15,6 +15,6 @@ MonoBehaviour:
   title: Power Warlock
   health: 200
   defence: 3
-  damage: 15
+  damage: 20
   rarity: 2
   attackSpeed: 3

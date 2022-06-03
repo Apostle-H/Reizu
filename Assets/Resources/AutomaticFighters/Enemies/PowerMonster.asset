@@ -15,6 +15,6 @@ MonoBehaviour:
   title: Power Monster
   health: 250
   defence: 2
-  damage: 7
+  damage: 8
   rarity: 2
   attackSpeed: 0.9
