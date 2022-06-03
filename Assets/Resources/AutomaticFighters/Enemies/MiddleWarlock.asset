@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MiddleWarlock
   m_EditorClassIdentifier: 
   title: Middle Warlock
-  health: 60
-  defence: 4
-  damage: 10
+  health: 100
+  defence: 3
+  damage: 13
   rarity: 1
-  attackSpeed: 6
+  attackSpeed: 3

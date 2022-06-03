@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BigMonster
   m_EditorClassIdentifier: 
   title: Big Monster
-  health: 70
-  defence: 6
-  damage: 6
+  health: 125
+  defence: 3
+  damage: 5
   rarity: 3
-  attackSpeed: 4
+  attackSpeed: 0.9

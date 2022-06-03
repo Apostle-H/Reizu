@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BigKrab
   m_EditorClassIdentifier: 
   title: BigKrab
-  health: 30
-  defence: 6
+  health: 120
+  defence: 4
   damage: 4
   rarity: 3
-  attackSpeed: 2
+  attackSpeed: 0.4

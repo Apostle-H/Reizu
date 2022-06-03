@@ -17,5 +17,5 @@ MonoBehaviour:
   rarity: 3
   type: 3
   riseStat: 0
-  riseValue: 8
+  riseValue: 4
   GFX: {fileID: 8561436127320091396, guid: 88966f05133d0ad42bdb0c4e54e45adf, type: 3}

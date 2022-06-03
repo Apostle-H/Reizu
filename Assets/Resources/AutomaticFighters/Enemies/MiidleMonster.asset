@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MiidleMonster
   m_EditorClassIdentifier: 
   title: Middle Monster
-  health: 60
-  defence: 5
-  damage: 5
+  health: 115
+  defence: 3
+  damage: 4
   rarity: 1
-  attackSpeed: 3
+  attackSpeed: 0.9

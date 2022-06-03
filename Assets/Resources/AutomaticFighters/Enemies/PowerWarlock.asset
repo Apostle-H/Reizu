@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PowerWarlock
   m_EditorClassIdentifier: 
   title: Power Warlock
-  health: 150
-  defence: 10
-  damage: 50
-  rarity: 0
-  attackSpeed: 5
+  health: 130
+  defence: 3
+  damage: 15
+  rarity: 2
+  attackSpeed: 3
