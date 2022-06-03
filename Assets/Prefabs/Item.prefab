@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corespondingButton: {fileID: 5076093681296397426}
   corespondingImage: {fileID: 8705296897360090579}
+  rarityCorespondingImage: {fileID: 8934966708218461621}
   statText: {fileID: 8224032278337615701}
   onlyTake: 0
 --- !u!1 &1482929912682804578

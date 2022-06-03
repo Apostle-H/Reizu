@@ -10,6 +10,7 @@ public class ItemSlot : MonoBehaviour
 
     [SerializeField] private Button corespondingButton;
     [SerializeField] private Image corespondingImage;
+    [SerializeField] private Image rarityCorespondingImage;
     [SerializeField] private TextMeshProUGUI statText;
 
     [SerializeField] private bool onlyTake;
@@ -40,6 +41,25 @@ public class ItemSlot : MonoBehaviour
     {
         corespondingImage.sprite = show ? item.Sprite : null;
         corespondingImage.enabled = show;
+
+        if (show && item != null)
+        {
+            switch (item.Rarity)
+            {
+                case Rarity.common:
+                    rarityCorespondingImage.color = RarityColors.common;
+                    break;
+                case Rarity.rare:
+                    rarityCorespondingImage.color = RarityColors.rare;
+                    break;
+                case Rarity.epic:
+                    rarityCorespondingImage.color = RarityColors.epic;
+                    break;
+                case Rarity.myth:
+                    rarityCorespondingImage.color = RarityColors.myth;
+                    break;
+            }
+        }
 
         if (item != null && item.Type == ItemType.consumable)
             statText.enabled = false;

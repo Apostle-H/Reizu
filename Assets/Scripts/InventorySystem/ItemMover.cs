@@ -30,7 +30,12 @@ public class ItemMover : MonoBehaviour
         Item tempItem = targetSlot.item;
 
         if (targetSlot.TrySetItem(currentSlot.item))
-            currentSlot.TrySetItem(tempItem);
+            if (!currentSlot.TrySetItem(tempItem))
+            {
+                currentSlot.TrySetItem(targetSlot.item);
+                targetSlot.TrySetItem(tempItem);
+            }
+            
 
         currentSlot = null;
         targetSlot = null;

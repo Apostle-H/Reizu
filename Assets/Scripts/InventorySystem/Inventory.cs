@@ -63,7 +63,11 @@ public class Inventory : MonoBehaviour
 
     private void Save()
     {
-        Debug.Log("save");
+        for (int i = 1; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
         SaveLoad.WriteJson(this);
     }
 
