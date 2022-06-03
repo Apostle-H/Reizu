@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private ItemSlot[] itemSlots;
 
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private Transform UI;
     [SerializeField] private GameObject losePanel;
 
     public delegate void Equip(Item previousItem, Item newItem);
@@ -63,7 +64,7 @@ public class Inventory : MonoBehaviour
 
     private void Save()
     {
-        for (int i = 1; i < transform.childCount; i++)
+        for (int i = 1; i < UI.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }

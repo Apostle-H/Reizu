@@ -27,7 +27,7 @@ public class SummonsPool : MonoBehaviour
         LoadLevelSummons();
     }
 
-    public Summon GetSummon(Rarity rarity) { Debug.Log("Summon"); return levelSummonPool[rarity]?.Dequeue(); }
+    public Summon GetSummon(Rarity rarity) => levelSummonPool[rarity]?.Dequeue();
 
     public Summon LoadSummon(Rarity rarity, string title)
     {

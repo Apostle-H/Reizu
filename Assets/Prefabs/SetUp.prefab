@@ -323,6 +323,7 @@ MonoBehaviour:
   - {fileID: 9117755887681913217}
   - {fileID: 1516646646697612194}
   inventoryPanel: {fileID: 1357324676476682152}
+  UI: {fileID: 9066451661688791358}
   losePanel: {fileID: 8233914885305747968}
 --- !u!1 &764360035554688558
 GameObject:
@@ -1579,6 +1580,7 @@ MonoBehaviour:
   levelManager: {fileID: 9152428202090246118}
   swipeDetector: {fileID: 256969299930110137}
   player: {fileID: 2729854041971454315}
+  character: {fileID: 5089838360489449619}
   virtualCamera: {fileID: 3408488150721853603}
 --- !u!1 &2665248975560834203
 GameObject:

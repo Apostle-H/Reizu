@@ -29,6 +29,8 @@ public class TameResolver : MonoBehaviour
 
     private void OnEnable()
     {
+        tamed = false;
+
         riseChanceSlot.onEquip += (Item previousItem, Item newItem) => ConsumeForChance();
         summonSlot.onEquip += (Item previousItem, Item newItem) => Leave(previousItem, newItem);
 
@@ -49,7 +51,7 @@ public class TameResolver : MonoBehaviour
 
         tameBtn.onClick.RemoveAllListeners();
         leaveBtn.onClick.RemoveAllListeners();
-    }
+    }   
 
     public void StartTame(float tameChance, Rarity rarity)
     {
@@ -91,9 +93,6 @@ public class TameResolver : MonoBehaviour
 
     private void Leave(Item previousItem, Item newItem)
     {
-        if (newItem != null)
-            return;
-
         if (previousItem == null)
             return;
 

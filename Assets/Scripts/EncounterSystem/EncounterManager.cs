@@ -13,8 +13,6 @@ public class EncounterManager : MonoBehaviour
     private EncounterSO currentEncounter;
     private int encounterIndex = 0;
 
-    public event Void onEndEncounter;
-
     private void OnEnable()
     {
         explore.onCameOnPlatform += (platfrom, player) => FaceEncounter(platfrom);
@@ -35,9 +33,10 @@ public class EncounterManager : MonoBehaviour
 
     public void FaceEncounter(Platform platfrom)
     {
-        if (platfrom.encounters == null || platfrom.encounters.Length < 1 || platfrom.encountersResolved    )
+        if (platfrom.encounters == null || platfrom.encounters.Length < 1 || platfrom.encountersResolved)
             return;
 
+        Debug.Log(platfrom.name);
         currentPlatform = platfrom;
         currentEncounter = platfrom.encounters[encounterIndex];
 
@@ -89,12 +88,11 @@ public class EncounterManager : MonoBehaviour
             explore.enabled = true;
         }
 
-        onEndEncounter?.Invoke();
-
         encounterIndex++;
-        if (encounterIndex >= currentPlatform.encounters.Length)
+        if (encounterIndex >= currentPlatform.encounters.Length || currentPlatform.encountersResolved)
         {
             encounterIndex = 0;
+            currentPlatform.encountersResolved = true;
             return;
         }
 
