@@ -25,8 +25,10 @@ public static class Extensions
     {
         List<T> result = new List<T>();
 
+        Debug.Log(list.Count);
         for (int i = startingIndex, j = 0; i < list.Count; i++, j++)
         {
+            Debug.Log(i);
             result.Add(list[i]);
         }
 
