@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 1; i < UI.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            UI.GetChild(i).gameObject.SetActive(false);
         }
 
         SaveLoad.WriteJson(this);
