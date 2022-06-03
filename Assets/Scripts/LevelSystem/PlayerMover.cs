@@ -41,13 +41,8 @@ public class PlayerMover : MonoBehaviour
         Platform targetPlatform = null;
         switch (moveSide)
         {
-            case Side.down:
-                targetPlatform = levelManager.previous;
-                player.eulerAngles = new Vector3(0, 180, 0);
-                break;
             case Side.up:
                 targetPlatform = levelManager.next;
-                player.eulerAngles = new Vector3(0, 0, 0);
                 break;
         }
 
