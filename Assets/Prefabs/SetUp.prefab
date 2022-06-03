@@ -5455,6 +5455,10 @@ PrefabInstance:
       propertyPath: fitingType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4109541568423747606, guid: 6d73f886992efdc408b81979b4434689, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Sprite
       value: 
