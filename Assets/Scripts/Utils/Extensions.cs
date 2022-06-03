@@ -25,7 +25,7 @@ public static class Extensions
     {
         T[] result = new T[amount];
 
-        for (int i = startingIndex, j = 0; i < amount; i++, j++)
+        for (int i = startingIndex, j = 0; j < amount; i++, j++)
         {
             result[j] = list[i];
         }

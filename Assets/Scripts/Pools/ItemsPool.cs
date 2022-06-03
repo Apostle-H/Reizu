@@ -27,13 +27,9 @@ public class ItemsPool : MonoBehaviour
 
     public Item[] GetItems(int amount, Rarity rarity)
     {
-        int startingIndex;
-        int resultAmount;
-        
-        startingIndex = levelItemsPool[rarity].Count - (amount + (levelItemsPool[rarity].Count - amount));
-        resultAmount = startingIndex + amount > levelItemsPool[rarity].Count ? amount - ((startingIndex + amount) - levelItemsPool[rarity].Count) : amount;
+        int startingIndex = levelItemsPool[rarity].Count - amount - 1;
 
-        return levelItemsPool[rarity].GetRangeOut(startingIndex, resultAmount);
+        return levelItemsPool[rarity].GetRangeOut(startingIndex, amount);
     }
 
     public Item LoadItem(Rarity rarity, string title)
@@ -59,7 +55,8 @@ public class ItemsPool : MonoBehaviour
 
                 for (int j = 0; j < realChestEncounter.MaxItemsAmount; j++)
                 {
-                    levelItemsPool[realChestEncounter.Rarity].Add(tempPool[UnityEngine.Random.Range(0, tempPool.Length)].CreateInstance());
+                    Item item = tempPool[UnityEngine.Random.Range(0, tempPool.Length)].CreateInstance();
+                    levelItemsPool[realChestEncounter.Rarity].Add(item);
                 }
             }
         }

@@ -13,7 +13,7 @@ public class EncounterManager : MonoBehaviour
     private EncounterSO currentEncounter;
     private int encounterIndex = 0;
 
-    private void OnEnable()
+    private void Awake()
     {
         explore.onCameOnPlatform += (platfrom, player) => FaceEncounter(platfrom);
 
@@ -22,14 +22,14 @@ public class EncounterManager : MonoBehaviour
         tameResolver.onEndTame += FinishEncounter;
     }
 
-    private void OnDisable()
-    {
-        explore.onCameOnPlatform -= (platfrom, player) => FaceEncounter(platfrom);
+    //private void OnDisable()
+    //{
+    //    explore.onCameOnPlatform -= (platfrom, player) => FaceEncounter(platfrom);
 
-        combatResolver.onEndCombat -= FinishEncounter;
-        chestResolver.onClose -= FinishEncounter;
-        tameResolver.onEndTame -= FinishEncounter;
-    }
+    //    combatResolver.onEndCombat -= FinishEncounter;
+    //    chestResolver.onClose -= FinishEncounter;
+    //    tameResolver.onEndTame -= FinishEncounter;
+    //}
 
     public void FaceEncounter(Platform platfrom)
     {
@@ -88,6 +88,7 @@ public class EncounterManager : MonoBehaviour
         }
 
         encounterIndex++;
+        Debug.Log(encounterIndex);
         if (encounterIndex >= currentPlatform.encounters.Length || currentPlatform.encountersResolved)
         {
             encounterIndex = 0;
