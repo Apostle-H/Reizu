@@ -1766,10 +1766,10 @@ RectTransform:
   m_Father: {fileID: 5611642172483315637}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 231.14825, y: -60.609497}
+  m_SizeDelta: {x: 302.2965, y: 121.218994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1876959392595479417
 CanvasRenderer:
@@ -2518,10 +2518,10 @@ RectTransform:
   m_Father: {fileID: 5611642172483315637}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 553.44476, y: -60.609497}
+  m_SizeDelta: {x: 302.2965, y: 121.218994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2005738255149456887
 CanvasRenderer:
@@ -2815,7 +2815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6598838248582813241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5089838360489449619}
@@ -2935,7 +2935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.000030517578, y: 36}
+  m_AnchoredPosition: {x: 0, y: 36}
   m_SizeDelta: {x: -40.000004, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7266545624059191161
@@ -3415,8 +3415,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0026245117}
-  m_SizeDelta: {x: 0, y: -0.0047607}
+  m_AnchoredPosition: {x: 0, y: -32.010986}
+  m_SizeDelta: {x: -15.407, y: -1475.656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3351978165302256379
 CanvasRenderer:
@@ -4090,7 +4090,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4777,7 +4777,7 @@ PrefabInstance:
     - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4a6b640c5ca2fd3409ec73041ee869cd, type: 3}
+      objectReference: {fileID: 21300000, guid: 063721e9264e2d44fabc11a05b1378a8, type: 3}
     - target: {fileID: 4223614418684531715, guid: 6d73f886992efdc408b81979b4434689, type: 3}
       propertyPath: m_Color.a
       value: 1
