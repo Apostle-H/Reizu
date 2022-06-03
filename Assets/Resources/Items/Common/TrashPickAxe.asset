@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrashPickAxe
   m_EditorClassIdentifier: 
   title: Trash Pick Axe
+  sprite: {fileID: 21300000, guid: e59b955ef24c2774cac5f6a006a341b5, type: 3}
   rarity: 0
   type: 0
   riseStat: 0

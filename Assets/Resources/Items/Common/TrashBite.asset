@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TrashBite
   m_EditorClassIdentifier: 
   title: Trash Bite
+  sprite: {fileID: 21300000, guid: 5ac4d5bda36881140aa0a52b8d14bc57, type: 3}
   rarity: 0
   type: 2
   riseStat: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RainBite
   m_EditorClassIdentifier: 
   title: Rain Bite
+  sprite: {fileID: 21300000, guid: 308527b807772234e8587ce542d6eeaa, type: 3}
   rarity: 2
   type: 2
   riseStat: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WoodSworld
   m_EditorClassIdentifier: 
   title: Wood Sworld
+  sprite: {fileID: 21300000, guid: 90594bdcbc94cbe43bcd2034cc03a6c0, type: 3}
   rarity: 1
   type: 0
   riseStat: 0

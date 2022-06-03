@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AverageBite
   m_EditorClassIdentifier: 
   title: Average Bite
+  sprite: {fileID: 21300000, guid: 308527b807772234e8587ce542d6eeaa, type: 3}
   rarity: 1
   type: 2
   riseStat: 0

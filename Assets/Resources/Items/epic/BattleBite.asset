@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BattleBite
   m_EditorClassIdentifier: 
   title: Battle Bite
+  sprite: {fileID: 21300000, guid: c870bbbcc82144a46949c753480c96ee, type: 3}
   rarity: 2
   type: 2
   riseStat: 0
