@@ -25,7 +25,7 @@ public static class Extensions
     {
         List<T> result = new List<T>();
 
-        for (int i = startingIndex, j = 0; j < amount && i < list.Count; i++, j++)
+        for (int i = startingIndex, j = 0; i < list.Count; i++, j++)
         {
             result.Add(list[i]);
         }
