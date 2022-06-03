@@ -58,7 +58,6 @@ public class ItemsPool : MonoBehaviour
                     Item item = tempPool[UnityEngine.Random.Range(0, tempPool.Length)].CreateInstance();
                     levelItemsPool[realChestEncounter.Rarity].Add(item);
                 }
-                Debug.Log(realChestEncounter.Rarity);
             }
         }
     }
