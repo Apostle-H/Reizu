@@ -10,7 +10,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private SwipeDetector swipeDetector;
 
     [SerializeField] private Transform player;
-    [SerializeField] private Transform character;
+    [SerializeField] private Transform skelet;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
     private Platform currentPlatform;
@@ -40,11 +40,12 @@ public class PlayerMover : MonoBehaviour
         swipeDetector.onSwipe -= Move;
 
         Platform targetPlatform;
+        skelet.localPosition = Vector3.zero;
+        skelet.eulerAngles = new Vector3(0, 90, 0);
         switch (moveSide)
         {
             case Side.up: 
                 targetPlatform = levelManager.next;
-                character.eulerAngles = new Vector3(0, 90, 0);
                 break;
             default:
                 targetPlatform = null;

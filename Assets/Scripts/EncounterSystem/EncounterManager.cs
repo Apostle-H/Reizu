@@ -36,7 +36,6 @@ public class EncounterManager : MonoBehaviour
         if (platfrom.encounters == null || platfrom.encounters.Length < 1 || platfrom.encountersResolved)
             return;
 
-        Debug.Log(platfrom.name);
         currentPlatform = platfrom;
         currentEncounter = platfrom.encounters[encounterIndex];
 
