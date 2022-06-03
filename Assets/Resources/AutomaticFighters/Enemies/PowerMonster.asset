@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PowerMonster
   m_EditorClassIdentifier: 
   title: Power Monster
-  health: 160
+  health: 250
   defence: 2
-  damage: 4
+  damage: 7
   rarity: 2
   attackSpeed: 0.9

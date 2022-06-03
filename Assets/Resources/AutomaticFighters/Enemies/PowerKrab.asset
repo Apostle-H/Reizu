@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PowerKrab
   m_EditorClassIdentifier: 
   title: Power Krab
-  health: 200
+  health: 350
   defence: 2
-  damage: 5
+  damage: 6
   rarity: 2
   attackSpeed: 0.4
