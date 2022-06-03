@@ -23,11 +23,11 @@ public static class Extensions
 
     public static T[] GetRangeOut<T>(this IList<T> list, int startingIndex, int amount)
     {
-        T[] result = new T[amount];
+        List<T> result = new List<T>();
 
-        for (int i = startingIndex, j = 0; j < amount; i++, j++)
+        for (int i = startingIndex, j = 0; j < amount && i < list.Count; i++, j++)
         {
-            result[j] = list[i];
+            result.Add(list[i]);
         }
 
         for (int i = list.Count - 1; i >= startingIndex; i--)
@@ -35,6 +35,6 @@ public static class Extensions
             list.RemoveAt(i);
         }
 
-        return result;
+        return result.ToArray();
     }
 }

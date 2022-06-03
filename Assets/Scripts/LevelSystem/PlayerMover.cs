@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform skelet;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private GameObject winPanel;
 
     private Platform currentPlatform;
 
@@ -54,7 +56,11 @@ public class PlayerMover : MonoBehaviour
         }
 
         if (targetPlatform == null)
+        {
+            winPanel.SetActive(true);
+            winPanel.GetComponent<Image>().DOFade(1f, 5f).onComplete;
             return;
+        }
 
         currentPlatform = targetPlatform;
 
