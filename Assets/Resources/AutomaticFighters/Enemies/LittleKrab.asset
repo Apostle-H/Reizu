@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LittleKrab
   m_EditorClassIdentifier: 
   title: Little Krab
-  health: 20
+  health: 70
   defence: 2
-  damage: 1
+  damage: 2
   rarity: 0
-  attackSpeed: 3
+  attackSpeed: 0.5

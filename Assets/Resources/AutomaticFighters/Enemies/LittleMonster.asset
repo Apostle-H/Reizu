@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LittleMonster
   m_EditorClassIdentifier: 
   title: LittleMonster
-  health: 50
+  health: 100
   defence: 5
   damage: 3
   rarity: 0
-  attackSpeed: 3
+  attackSpeed: 0.8

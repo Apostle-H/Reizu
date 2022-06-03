@@ -178,6 +178,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile5
       objectReference: {fileID: 0}
+    - target: {fileID: 4406507181417136395, guid: d98120181e6314e468ccf393f65ea340, type: 3}
+      propertyPath: encounters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406507181417136395, guid: d98120181e6314e468ccf393f65ea340, type: 3}
+      propertyPath: encounters.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f3f7a78dd2cf304183e7e62b0e62aff, type: 2}
+    - target: {fileID: 4406507181417136395, guid: d98120181e6314e468ccf393f65ea340, type: 3}
+      propertyPath: encounters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88ad2afc2d6215743902b9973d32a8cf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98120181e6314e468ccf393f65ea340, type: 3}
 --- !u!4 &23453189 stripped
@@ -205,12 +217,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2122203339521561441, guid: dcaa0ea26fd16214cbaed64351cb7e22, type: 3}
       propertyPath: encounters.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2122203339521561441, guid: dcaa0ea26fd16214cbaed64351cb7e22, type: 3}
       propertyPath: encounters.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 2551fa22ee759c2469f906af83b89c29, type: 2}
+      objectReference: {fileID: 11400000, guid: 1f3f7a78dd2cf304183e7e62b0e62aff, type: 2}
+    - target: {fileID: -2122203339521561441, guid: dcaa0ea26fd16214cbaed64351cb7e22, type: 3}
+      propertyPath: encounters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bcb2ea8412d3e84e85057b081c7ecb1, type: 2}
     - target: {fileID: 8660206491991825686, guid: dcaa0ea26fd16214cbaed64351cb7e22, type: 3}
       propertyPath: m_Name
       value: Tile3
@@ -284,6 +300,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1891666315}
     m_Modifications:
+    - target: {fileID: -8182965776013721385, guid: 84e01f53b77623e47802d5a09f48da93, type: 3}
+      propertyPath: encounters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8182965776013721385, guid: 84e01f53b77623e47802d5a09f48da93, type: 3}
+      propertyPath: encounters.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f3f7a78dd2cf304183e7e62b0e62aff, type: 2}
+    - target: {fileID: -8182965776013721385, guid: 84e01f53b77623e47802d5a09f48da93, type: 3}
+      propertyPath: encounters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 88ad2afc2d6215743902b9973d32a8cf, type: 2}
     - target: {fileID: 5353129631642032220, guid: 84e01f53b77623e47802d5a09f48da93, type: 3}
       propertyPath: m_Name
       value: Tile4
@@ -456,12 +484,16 @@ PrefabInstance:
       objectReference: {fileID: 1514465669}
     - target: {fileID: 4166403640130809180, guid: 479e3b92a63b26d4e8a102a405e5e183, type: 3}
       propertyPath: encounters.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4166403640130809180, guid: 479e3b92a63b26d4e8a102a405e5e183, type: 3}
       propertyPath: encounters.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 88ad2afc2d6215743902b9973d32a8cf, type: 2}
+      objectReference: {fileID: 11400000, guid: 1f3f7a78dd2cf304183e7e62b0e62aff, type: 2}
+    - target: {fileID: 4166403640130809180, guid: 479e3b92a63b26d4e8a102a405e5e183, type: 3}
+      propertyPath: encounters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bcb2ea8412d3e84e85057b081c7ecb1, type: 2}
     - target: {fileID: 7640816899510999812, guid: 479e3b92a63b26d4e8a102a405e5e183, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.75
@@ -545,7 +577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7543811708923696945, guid: 48dfa0ae2c6b29b478dd87bf8dab9678, type: 3}
       propertyPath: encounters.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7543811708923696945, guid: 48dfa0ae2c6b29b478dd87bf8dab9678, type: 3}
       propertyPath: encounters.Array.data[0]
@@ -554,7 +586,7 @@ PrefabInstance:
     - target: {fileID: -7543811708923696945, guid: 48dfa0ae2c6b29b478dd87bf8dab9678, type: 3}
       propertyPath: encounters.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: a1b3bbb07b12aa94d8bdfa7278817e59, type: 2}
+      objectReference: {fileID: 11400000, guid: 88ad2afc2d6215743902b9973d32a8cf, type: 2}
     - target: {fileID: 2139058136150251623, guid: 48dfa0ae2c6b29b478dd87bf8dab9678, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.75
@@ -632,6 +664,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1891666315}
     m_Modifications:
+    - target: {fileID: 5773937864285586930, guid: c2addc4feccc8e74eba9cd6ff34e91b9, type: 3}
+      propertyPath: encounters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773937864285586930, guid: c2addc4feccc8e74eba9cd6ff34e91b9, type: 3}
+      propertyPath: encounters.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f3f7a78dd2cf304183e7e62b0e62aff, type: 2}
     - target: {fileID: 8689941474062428704, guid: c2addc4feccc8e74eba9cd6ff34e91b9, type: 3}
       propertyPath: m_Name
       value: Tile6

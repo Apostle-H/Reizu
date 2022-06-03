@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   title: Player
-  health: 30
+  health: 100
   defence: 0
-  damage: 5
+  damage: 10

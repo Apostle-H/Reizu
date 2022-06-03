@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LittleWarlock
   m_EditorClassIdentifier: 
   title: Little Warlock
-  health: 30
-  defence: 5
-  damage: 5
+  health: 80
+  defence: 4
+  damage: 10
   rarity: 0
-  attackSpeed: 5
+  attackSpeed: 3
