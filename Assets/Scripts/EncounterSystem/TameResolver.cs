@@ -51,6 +51,7 @@ public class TameResolver : MonoBehaviour
 
         tameBtn.onClick.RemoveAllListeners();
         leaveBtn.onClick.RemoveAllListeners();
+        summonSlot.TrySetItem(null);
     }   
 
     public void StartTame(float tameChance, Rarity rarity)

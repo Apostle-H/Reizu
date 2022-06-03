@@ -14,6 +14,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private Transform skelet;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject losePanel;
 
     private Platform currentPlatform;
 
@@ -55,12 +56,12 @@ public class PlayerMover : MonoBehaviour
                 break;
         }
 
-        //if (targetPlatform == null)
-        //{
-        //    winPanel.SetActive(true);
-        //    winPanel.GetComponent<Image>().DOFade(1f, 5f).onComplete;
-        //    return;
-        //}
+        if (targetPlatform == null)
+        {
+            winPanel.SetActive(true);
+            winPanel.GetComponent<Image>().DOFade(1f, 5f).onComplete += () => losePanel.SetActive(true);
+            return;
+        }
 
         currentPlatform = targetPlatform;
 

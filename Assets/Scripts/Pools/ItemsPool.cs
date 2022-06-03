@@ -27,7 +27,7 @@ public class ItemsPool : MonoBehaviour
 
     public Item[] GetItems(int amount, Rarity rarity)
     {
-        int startingIndex = levelItemsPool[rarity].Count - amount - 1;
+        int startingIndex = levelItemsPool[rarity].Count - amount - 1 < 0 ? 0 : levelItemsPool[rarity].Count - amount - 1;
 
         return levelItemsPool[rarity].GetRangeOut(startingIndex, amount);
     }
@@ -58,6 +58,7 @@ public class ItemsPool : MonoBehaviour
                     Item item = tempPool[UnityEngine.Random.Range(0, tempPool.Length)].CreateInstance();
                     levelItemsPool[realChestEncounter.Rarity].Add(item);
                 }
+                Debug.Log(realChestEncounter.Rarity);
             }
         }
     }

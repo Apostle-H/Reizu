@@ -68,7 +68,7 @@ public class CombatResolver : MonoBehaviour
             {
                 Summon realSummon = (Summon)inventory.summons[i];
 
-                realSummon.fighter().gameObject.SetActive(true);
+                realSummon.fighter().gameObject.SetActive(false);
             }
             onEndCombat?.Invoke();
         }

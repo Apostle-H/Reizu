@@ -34,6 +34,7 @@ public class ChestResolver : MonoBehaviour
         for (int i = 0; i < itemSlots.Length; i++)
         {
             itemSlots[i].itemButton.onClick.RemoveAllListeners();
+            itemSlots[i].TrySetItem(null);
         }
     }
 

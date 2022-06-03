@@ -88,7 +88,6 @@ public class EncounterManager : MonoBehaviour
         }
 
         encounterIndex++;
-        Debug.Log(encounterIndex);
         if (encounterIndex >= currentPlatform.encounters.Length || currentPlatform.encountersResolved)
         {
             encounterIndex = 0;
