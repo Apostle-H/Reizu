@@ -56,7 +56,7 @@ public class PlayerMover : MonoBehaviour
                 break;
         }
 
-        if (targetPlatform == null)
+        if (targetPlatform == null && moveSide == Side.up)
         {
             winPanel.SetActive(true);
             winPanel.GetComponent<Image>().DOFade(1f, 5f).onComplete += () => losePanel.SetActive(true);
